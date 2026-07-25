@@ -34,6 +34,8 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
 <img width="507" height="143" alt="image" src="https://github.com/user-attachments/assets/819ca25e-28d1-41a2-bafc-a2754d89cc8a" />
 
+<img width="554" height="369" alt="image" src="https://github.com/user-attachments/assets/a2b39f77-7693-4810-a998-9f67a5eb4132" />
+
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
