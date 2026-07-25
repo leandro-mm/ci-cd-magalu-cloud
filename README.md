@@ -44,6 +44,11 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 <img width="554" height="369" alt="image" src="https://github.com/user-attachments/assets/a2b39f77-7693-4810-a998-9f67a5eb4132" />
 
 ### 6: Criar Cluster Kubernets na Magalu Cloud 
+<img width="324" height="210" alt="image" src="https://github.com/user-attachments/assets/a527acd4-8a38-4115-9b90-0d586ae252b5" />
+
+<img width="580" height="366" alt="image" src="https://github.com/user-attachments/assets/4f01bf13-0eae-4210-aed1-966d86a2bd17" />
+
+
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
