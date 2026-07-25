@@ -4,17 +4,23 @@
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud
 - Docker instalado e configurado na VM 
 
-### Parte 1: Publicando Imagens da VM para o Container Registry da Magalu Cloud
-Nessa primeira parte, veremos como autenticar, tagear e fazer push de uma imagem Docker para o Container Registry da Magalu Cloud.
+### 1. MGC
+- [Instalar MGC CLI na VM](Acehttps://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
+```bash
+mgc auth login
+```	
+  
+### 2. Publicar Docker Images da VM para o Container Registry da Magalu Cloud
+- Autenticar, tagear e fazer push de uma imagem Docker para o Container Registry da Magalu Cloud.
 
-#### **1.1 Login no registry**
+#### **2.1 Login no registry**
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud -u SEU_USER_ID
 ```
 - O sistema solicitará sua senha/token. Para obtê-los, vá para seu namespace no Container Registry.
 <img width="600" height="300" alt="container-registry-magalu" src="https://github.com/user-attachments/assets/0eeb57eb-acc4-4bbc-b510-97c49956fdc8" />
 
-#### **1.2 Tagear a Imagem Docker**
+#### **2.2 Tagear a Imagem Docker**
 ```bash
 # 2. Verificar imagem local
 docker images
@@ -25,7 +31,7 @@ docker tag <NOME_IMAGEM_LOCAL:TAG LOCAL> container-registry.br-se1.magalu.cloud/
 #Exemplo
 docker tag docker-teste1:local container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
-#### **1.3 Push para o registry**
+#### **2.3 Push para o registry**
 ```bash
 docker push container-registry.br-se1.magalu.cloud/<NOME_REPOSITORIO>/<NOME_IMAGEM:TAG>
 
