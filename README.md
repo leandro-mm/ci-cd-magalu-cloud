@@ -160,13 +160,13 @@ kubectl get pods -o wide
 ```
 
 
-<img width="1568" height="75" alt="image" src="https://github.com/user-attachments/assets/38717364-7df0-42cc-a8d1-ef8c71f08ef0" />
+<img width="1199" height="60" alt="image" src="https://github.com/user-attachments/assets/e86308f5-e06d-4dc4-86a4-21b2383234ed" />
 
-Descrever um dos pods para ver a mensagem de erro exata
 ```bash
-kubectl describe pod <POD-NAME>
+kubectl get service <VALOR-NA-SECAO-NAME-KIND-SERVICE->-service --watch
 ```
 
+### 7: Troubleshooting
 Possíveis status de erros
 - ImagePullBackOff: Kubernetes não conseguiu puxar (pull) a imagem definida no Deployment
 - ErrImagePull: Falha imediata ao tentar puxar a imagem
@@ -175,9 +175,11 @@ Possíveis status de erros
 - Completed: Container foi morto por falta de memória (Out Of Memory)
 - Evicted: Pod foi removido por falta de recursos no nó
   
+Descrever um dos pods para ver a mensagem de erro exata
 ```bash
-kubectl get service <VALOR-NA-SECAO-NAME-KIND-SERVICE->-service --watch
-```
+kubectl describe pod <POD-NAME>
+```  
+
 <img width="754" height="42" alt="image" src="https://github.com/user-attachments/assets/a5bd25ac-d378-4b13-9215-245c5fa78103" />
 
 
