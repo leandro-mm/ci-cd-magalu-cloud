@@ -136,7 +136,7 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 #### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
-- *salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
+- *salve o conteúdo abaixo em <NOME-DO-ARQUIVO> .yaml*
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
