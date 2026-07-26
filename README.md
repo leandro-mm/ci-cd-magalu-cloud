@@ -133,6 +133,8 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 --docker-password=<SUA_SENHA> \ #passo 3 login no container registry
 --docker-email=<SEU_EMAIL> #passo 3 login no container registry
 ```
+<img width="322" height="21" alt="image" src="https://github.com/user-attachments/assets/4adc0ac6-633b-4159-bf76-2970da0f9a96" />
+
 #### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
