@@ -2,8 +2,8 @@
 #### **Pré-requisitos**
 - Conta ativa na Magalu Cloud
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud
-- Docker instalado e configurado na VM
-- Imagem docker configurada e container funcionando
+- Docker instalado e configurado na Máquina Virtual
+- 1 Docker file e container funcional
 
 ### 1. MGC
 [Instalar MGC CLI na VM](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
@@ -44,9 +44,17 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 <img width="554" height="369" alt="image" src="https://github.com/user-attachments/assets/a2b39f77-7693-4810-a998-9f67a5eb4132" />
 
 ### 6: Criar Cluster Kubernets na Magalu Cloud 
-<img width="324" height="210" alt="image" src="https://github.com/user-attachments/assets/a527acd4-8a38-4115-9b90-0d586ae252b5" />
+- versão de Kubernetes: padrão (recomendado)
+- Nome do node pool: pod-name1
+- Zona de disponibilidade: br-se1-a
+- Tipo de instância: low memory Balanced Value
+- Número de Nodes: 5
+- nome do cluster: cluster-kubenets1
 
-<img width="580" height="366" alt="image" src="https://github.com/user-attachments/assets/4f01bf13-0eae-4210-aed1-966d86a2bd17" />
+  <img width="1204" height="281" alt="image" src="https://github.com/user-attachments/assets/4a8dc4b9-1a96-4719-8e42-4e547f1449a5" />
+  <img width="941" height="485" alt="image" src="https://github.com/user-attachments/assets/ea8e63de-e861-41f2-ae68-fff321d518e4" />
+
+
 
 
 
