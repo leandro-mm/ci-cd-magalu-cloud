@@ -161,7 +161,16 @@ spec:
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
-*pode ser necesário executar o comando do passo 6.2.3*
+*se o comando abaixo retornar erro e **echo $VARIABLE_NAME** não mostrar nada, execute o passo 6.2.3 novamente*
+```bash
+kubectl apply -f <NOME-ARQUIVO-PASSO8>.yaml
+```
+```bash
+kubectl get pods -o wide
+```
+```bash
+kubectl get service <VALOR-NA-SECAO-NAME-KIND-SERVICE->-service --watch
+```
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
