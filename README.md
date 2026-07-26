@@ -21,14 +21,16 @@ O sistema solicitará sua senha/token. Para obtê-los, vá para seu namespace no
 <img width="600" height="300" alt="container-registry-magalu" src="https://github.com/user-attachments/assets/0eeb57eb-acc4-4bbc-b510-97c49956fdc8" />
 
 ### 4. Tagear imagem Docker
+Verificar imagem local
 ```bash
-# Verificar imagem local
 docker images
-
-# Tagear a imagem
+```
+Tagear a imagem
+```bash
 docker tag <NOME_IMAGEM_LOCAL:TAG LOCAL> container-registry.br-se1.magalu.cloud/<NOME_REPOSITORIO>/<NOME_IMAGEM:TAG>
-
-#Exemplo
+```
+Exemplo
+```bash
 docker tag docker-teste1:local container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
 
@@ -36,7 +38,8 @@ docker tag docker-teste1:local container-registry.br-se1.magalu.cloud/container1
 ```bash
 docker push container-registry.br-se1.magalu.cloud/<NOME_REPOSITORIO>/<NOME_IMAGEM:TAG>
 
-#Exemplo
+Exemplo
+```bash
 docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
 
@@ -81,13 +84,12 @@ kubectl version --client
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 | ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
-
-```bash
 # enviar o arquivo para a máquina virtual
+```bash
 scp nome_arquivo user@ip:/destino
 ```
-```bash
 #criar variável de ambiente
+```bash
 $ export KUBECONFIG=$PWD/kubeconfig.yaml
 ```
 ```bash
