@@ -59,6 +59,23 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 | :---: | :---: |
 | ![](https://github.com/user-attachments/assets/4a8dc4b9-1a96-4719-8e42-4e547f1449a5) | ![](https://github.com/user-attachments/assets/ea8e63de-e861-41f2-ae68-fff321d518e4) |
 
+#### 6.1: Instalar Kubectl no Ubuntu
+```bash
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dlk8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/kubectl
+kubectl version --client
+```
+
+#### 6.2: Download do kubeconfig
+```bash
+mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml
+
+#criar variável de ambiente
+$ export KUBECONFIG=$PWD/kubeconfig.yaml
+$ kubectl get nodes
+```
+
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
