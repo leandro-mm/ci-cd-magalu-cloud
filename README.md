@@ -163,7 +163,7 @@ kubectl get pods -o wide
 <img width="1199" height="60" alt="image" src="https://github.com/user-attachments/assets/e86308f5-e06d-4dc4-86a4-21b2383234ed" />
 
 ```bash
-kubectl get service <app-k8s-service-name>-service --watch
+kubectl get service <app-k8s-service-name> --watch
 ```
 
 ### 7: Troubleshooting
