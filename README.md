@@ -109,6 +109,8 @@ echo $KUBECONFIG
 ```bash
 kubectl cluster-info
 ```
+<img width="897" height="168" alt="image" src="https://github.com/user-attachments/assets/c9886bba-6615-4ede-aa16-18dba3a67e50" />
+
 ```bash
 kubectl get nodes
 ```
