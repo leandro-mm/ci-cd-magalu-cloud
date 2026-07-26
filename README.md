@@ -136,7 +136,7 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 #### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
-- Edite o conteúdo do arquivo kubeconfig.yaml contido neste repositório
+- Edite o conteúdo do arquivo *kube-deployment-service-config.yaml* contido neste repositório
 
 #### 6.8: enviar o arquivo para a máquina virtual
 ```bash
@@ -144,7 +144,7 @@ scp nome_arquivo user@ip:/destino
 ```
 #### 6.8: aplicar o deployment/service
 ```bash
-kubectl apply -f kubeconfig.yaml
+kubectl apply -f kube-deployment-service-config.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
