@@ -84,16 +84,16 @@ kubectl version --client
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 | ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
-# enviar o arquivo para a máquina virtual
+enviar o arquivo para a máquina virtual
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
-#criar variável de ambiente
+criar variável de ambiente
 ```bash
-$ export KUBECONFIG=$PWD/kubeconfig.yaml
+export KUBECONFIG=$PWD/kubeconfig.yaml
 ```
 ```bash
-$ kubectl get nodes
+kubectl get nodes
 ```
 
 ### Links Úteis
