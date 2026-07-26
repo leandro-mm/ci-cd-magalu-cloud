@@ -1,5 +1,12 @@
 ## Práticas de CI/CD Utilizando Magalu Cloud
-#### **Pré-requisitos**
+
+#### Objetivo
+Executar processo manual para 
+1. empacotar uma aplicação em container
+2. armazenr o container em um registry privado na Magalu Cloud
+3. executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
+
+#### Pré-requisitos
 - Conta ativa na Magalu Cloud
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud
 - Docker instalado e configurado na Máquina Virtual
