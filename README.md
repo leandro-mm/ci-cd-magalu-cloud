@@ -96,7 +96,14 @@ scp nome_arquivo user@ip:/destino
 export KUBECONFIG=$PWD/kubeconfig.yaml
 ```
 ### 7: Integração Docker Registry x Kubernets
-O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem
+O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem.
+```bash
+kubectl create secret docker-registry magalu-registry-secret \
+--docker-server=container-registry.br-se1.magalu.cloud\
+--docker-username=<SEU_USUARIO> \  #passo 3 login no container registry
+--docker-password=<SUA_SENHA> \ #passo 3 login no container registry
+--docker-email=<SEU_EMAIL> #passo 3 login no container registry
+```
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
