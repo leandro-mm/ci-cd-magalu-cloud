@@ -3,7 +3,7 @@
 - Conta ativa na Magalu Cloud
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud
 - Docker instalado e configurado na Máquina Virtual
-- 1 Docker file e container funcional
+- Construir e executar uma imagem docker na Máquina Virtual
 
 ### 1. Instalar CLI MGC
 [instruções](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
