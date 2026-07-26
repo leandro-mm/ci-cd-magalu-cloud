@@ -87,15 +87,19 @@ kubectl version --client
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 | ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
-*6.2.1 enviar o arquivo para a máquina virtual*
+#### 6.3: enviar o arquivo para a máquina virtual
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
-*6.2.3 criar variável de ambiente*
+#### 6.4: criar variável de ambiente
 ```bash
 export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
 ```
-*6.2.4 testar a conexão*
+```bash
+echo $KUBECONFIG
+```
+
+#### 6.5: testar a conexão
 ```bash
 kubectl cluster-info
 ```
@@ -106,7 +110,7 @@ kubectl get nodes
 kubectl config current-context
 ```
 
-### 7: Integração Docker Registry x Kubernets
+#### 6.6: Integração Docker Registry x Kubernets
 O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem.
 ```bash
 kubectl create secret docker-registry <NOME-DO-SECRET> \
@@ -115,7 +119,7 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 --docker-password=<SUA_SENHA> \ #passo 3 login no container registry
 --docker-email=<SEU_EMAIL> #passo 3 login no container registry
 ```
-### 8: Aplicar o deployment e o service
+#### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
 - *salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
@@ -156,11 +160,11 @@ spec:
   selector:
     app: <identificacao-app>
 ```
-### 9: Validar os Pods e o IP externo do load balancer
-*enviar o arquivo para a máquina virtual*
+#### 6.8: enviar o arquivo para a máquina virtual
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
+#### 6.8: aplicar o deployment/service
 *se o comando abaixo retornar erro e **echo $VARIABLE_NAME** não mostrar nada, execute o passo 6.2.3 novamente*
 ```bash
 kubectl apply -f <NOME-ARQUIVO-PASSO8>.yaml
