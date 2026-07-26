@@ -2,7 +2,7 @@
 
 #### Objetivo
 1. empacotar uma aplicação em container
-2. armazenr o container em um registry privado na Magalu Cloud
+2. armazenar o container em um registry privado na Magalu Cloud
 3. executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
 
 #### Pré-requisitos
