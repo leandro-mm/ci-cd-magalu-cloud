@@ -102,7 +102,10 @@ scp nome_arquivo user@ip:/destino
 ```
 #### 6.4: criar variável de ambiente
 ```bash
-export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
+echo 'export KUBECONFIG=$HOME/<NOME-DO-ARQUIVO-BAIXADO>.yaml' >> ~/.bashrc
+```
+```bash
+source ~/.bashrc
 ```
 ```bash
 echo $KUBECONFIG
