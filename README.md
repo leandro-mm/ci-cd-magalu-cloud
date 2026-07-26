@@ -93,7 +93,7 @@ scp nome_arquivo user@ip:/destino
 ```
 *criar variável de ambiente*
 ```bash
-export KUBECONFIG=$PWD/kubeconfig.yaml
+export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
 ```
 ### 7: Integração Docker Registry x Kubernets
 O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem.
