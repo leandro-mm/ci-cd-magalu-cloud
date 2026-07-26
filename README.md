@@ -155,6 +155,9 @@ kubectl apply -f app-k8s.yaml
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
 #### 7: Monitoramento do cluster kubernetes
+```bash
+kubectl get pods -l app=my-app1
+```
 
 ```bash
 kubectl get pods -o wide
@@ -173,7 +176,16 @@ kubectl describe svc my-app1-service
 
 <img width="557" height="291" alt="image" src="https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5" />
 
+Service e app devem estar rodando na mesma porta
+```bash
+kubectl patch svc <nome-do-service-no-k8s-file> -p '{"spec":{"ports":[{"port":xx,"targetPort":xx}]}}'
+```
+
 Outros comandos
+Teste diretamente nos pods (ignorando o LoadBalancer)
+```bash
+kubectl exec -it <IDENTIFICADOR> -- curl -v localhost:80
+```
 
 <img width="667" height="67" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
 
