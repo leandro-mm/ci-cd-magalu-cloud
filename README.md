@@ -11,14 +11,17 @@
 mgc auth login
 ```	
 ### 2. Criar Container Registry na Magalu Cloud
-sem exemplo
+*sem exemplo*
 
 ### 3 Login no Container Registry
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud -u SEU_USER_ID
 ```
-O sistema solicitará sua senha/token. Para obtê-los, vá para seu namespace no Container Registry.
+*O sistema solicitará sua senha/token. Para obtê-los, vá para seu namespace no Container Registry*
+
 <img width="600" height="300" alt="container-registry-magalu" src="https://github.com/user-attachments/assets/0eeb57eb-acc4-4bbc-b510-97c49956fdc8" />
+
+*baixe o arquivo de credenciais para ser utilizado no passo 7*
 
 ### 4. Tagear imagem Docker
 Verificar imagem local
@@ -92,9 +95,8 @@ scp nome_arquivo user@ip:/destino
 ```bash
 export KUBECONFIG=$PWD/kubeconfig.yaml
 ```
-```bash
-kubectl get nodes
-```
+### 7: Integração Docker Registry x Kubernets
+O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
