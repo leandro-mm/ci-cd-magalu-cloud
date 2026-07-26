@@ -191,19 +191,12 @@ Teste diretamente nos pods (ignorando o LoadBalancer)
 ```bash
 kubectl exec -it <IDENTIFICADOR> -- curl -v localhost:80
 ```
+| | |
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404) | ![](https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39) | 
+|![](https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7)  | ![](https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e) | 
+| ![](https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356) |  ![](https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f)| 
 
-<img width="767" height="167" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
-
-<img width="755" height="177" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
-
-<img width="747" height="161" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
-
-<img width="773" height="172" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
-
-<img width="715" height="171" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
-
-
-<img width="767" height="211" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
 
 
 
@@ -219,16 +212,11 @@ Possíveis status de erros
 Descrever um dos pods para ver a mensagem de erro exata
 ```bash
 kubectl describe pod <POD-NAME>
-```  
-
-<img width="754" height="42" alt="image" src="https://github.com/user-attachments/assets/a5bd25ac-d378-4b13-9215-245c5fa78103" />
-<img width="807" height="145" alt="image" src="https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778" />
-
-<img width="827" height="140" alt="image" src="https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc" />
-<img width="800" height="113" alt="image" src="https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9" />
-
-<img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0" />
-
+```
+| | |
+| :---: | :---: |
+|![](https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0)| ![](https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778)| 
+| ![](https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc)| ![](https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9)| 
 
 ### Desalocar IP público
 o IP público muda seu status de in_use para created, ficando disponível para ser reutilizado ou deletado 
@@ -241,7 +229,10 @@ cd /mgccli_folder
 ```bash
 ./mgc.exe network public-ips list
 ```
- 
+```bash
+./mgc.exe  network public-ips delete <public-ip-id>
+```
+
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
