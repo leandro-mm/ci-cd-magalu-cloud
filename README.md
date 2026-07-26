@@ -166,6 +166,10 @@ kubectl get pods -o wide
 kubectl get service <app-k8s-service-name> --watch
 ```
 <img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
+```bash
+kubectl describe svc my-app1-service
+```
+<img width="557" height="291" alt="image" src="https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5" />
 
 ### 7: Troubleshooting
 Possíveis status de erros
