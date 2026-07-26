@@ -123,38 +123,38 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app1-deployment
+  name: <identificacao-app>-deployment
   labels:
-    app: my-app1
+    app: <identificacao-app>
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app1
+      app: <identificacao-app>
   template:
     metadata:
       labels:
-        app: my-app1
+        app: <identificacao-app>
     spec:
       imagePullSecrets:
-      - name: magalu-registry-secret
+      - name: <nome-secret-passo7>
       containers:
-      - name: my-app1
-        image: container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
+      - name: <identificacao-app>
+        image: container-registry.br-se1.magalu.cloud/<nome-container-register>/<nome-instancia>:<versao>
         ports:
         - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bash-commerce-service
+  name: <identificacao-app>-service
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: my-app1
+    app: <identificacao-app>
 ```
 
 *enviar o arquivo para a máquina virtual*
