@@ -115,7 +115,7 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 --docker-password=<SUA_SENHA> \ #passo 3 login no container registry
 --docker-email=<SEU_EMAIL> #passo 3 login no container registry
 ```
-### 8: Executar os recursos do cluster kubernetes
+### 8: Aplicar o deployment e o service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
 - *salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
@@ -156,7 +156,7 @@ spec:
   selector:
     app: <identificacao-app>
 ```
-
+### 9: Validar os Pods e o IP externo do load balancer
 *enviar o arquivo para a máquina virtual*
 ```bash
 scp nome_arquivo user@ip:/destino
@@ -165,12 +165,19 @@ scp nome_arquivo user@ip:/destino
 ```bash
 kubectl apply -f <NOME-ARQUIVO-PASSO8>.yaml
 ```
+<img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
+
+*ver os pods em execução*
 ```bash
 kubectl get pods -o wide
 ```
+<img width="1568" height="75" alt="image" src="https://github.com/user-attachments/assets/38717364-7df0-42cc-a8d1-ef8c71f08ef0" />
+
 ```bash
 kubectl get service <VALOR-NA-SECAO-NAME-KIND-SERVICE->-service --watch
 ```
+<img width="754" height="42" alt="image" src="https://github.com/user-attachments/assets/a5bd25ac-d378-4b13-9215-245c5fa78103" />
+
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
