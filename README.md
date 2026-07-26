@@ -109,11 +109,18 @@ kubectl config current-context
 ### 7: Integração Docker Registry x Kubernets
 O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem.
 ```bash
-kubectl create secret docker-registry magalu-registry-secret \
+kubectl create secret docker-registry <NOME-DO-SECRET> \
 --docker-server=container-registry.br-se1.magalu.cloud\
 --docker-username=<SEU_USUARIO> \  #passo 3 login no container registry
 --docker-password=<SUA_SENHA> \ #passo 3 login no container registry
 --docker-email=<SEU_EMAIL> #passo 3 login no container registry
+```
+### 8: Executar os recursos do cluster kubernetes
+Os recursos já estão provisionados no cluster porém não estão em execução
+criar o manifesto e aplicá-lo no kubernets para executar os recursos
+*salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
+```yaml
+
 ```
 
 ### Links Úteis
