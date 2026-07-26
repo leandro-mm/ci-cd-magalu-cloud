@@ -39,9 +39,13 @@ docker push container-registry.br-se1.magalu.cloud/<NOME_REPOSITORIO>/<NOME_IMAG
 #Exemplo
 docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
+
 <img width="507" height="143" alt="image" src="https://github.com/user-attachments/assets/819ca25e-28d1-41a2-bafc-a2754d89cc8a" />
 
-<img width="554" height="369" alt="image" src="https://github.com/user-attachments/assets/a2b39f77-7693-4810-a998-9f67a5eb4132" />
+| | |
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/f1243380-ff0a-4f93-9a62-b626398b4b94) | ![](https://github.com/user-attachments/assets/17b7b2c3-3bab-404e-952c-abfc79f06574) |
+
 
 ### 6: Criar Cluster Kubernets na Magalu Cloud 
 - versão de Kubernetes: padrão (recomendado)
@@ -51,12 +55,9 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 - Número de Nodes: 5
 - nome do cluster: cluster-kubenets1
 
-  <img width="1204" height="281" alt="image" src="https://github.com/user-attachments/assets/4a8dc4b9-1a96-4719-8e42-4e547f1449a5" />
-  <img width="941" height="485" alt="image" src="https://github.com/user-attachments/assets/ea8e63de-e861-41f2-ae68-fff321d518e4" />
-
-
-
-
+| | |
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/4a8dc4b9-1a96-4719-8e42-4e547f1449a5) | ![](https://github.com/user-attachments/assets/ea8e63de-e861-41f2-ae68-fff321d518e4) |
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
