@@ -79,14 +79,12 @@ kubectl version --client
 | :---: | :---: |
 | ![](https://github.com/user-attachments/assets/484e6457-f14d-4b86-a677-19ce1fd1bbae) | ![](https://github.com/user-attachments/assets/a6b87d07-e7b0-487b-96a9-8c3ae329d7d6) |
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
+| ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
 
 ```bash
 # enviar o arquivo para a máquina virtual
 scp nome_arquivo user@ip:/destino
-```
-```bash
-mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml
 ```
 ```bash
 #criar variável de ambiente
