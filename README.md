@@ -116,11 +116,50 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 --docker-email=<SEU_EMAIL> #passo 3 login no container registry
 ```
 ### 8: Executar os recursos do cluster kubernetes
-Os recursos já estão provisionados no cluster porém não estão em execução
-criar o manifesto e aplicá-lo no kubernets para executar os recursos
-*salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
+- Os recursos já estão provisionados no cluster porém não estão em execução
+- Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
+- *salve o conteúdo abaixo em <NOME-DO-ARQUIVO>.yaml*
 ```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app1-deployment
+  labels:
+    app: my-app1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app1
+  template:
+    metadata:
+      labels:
+        app: my-app1
+    spec:
+      imagePullSecrets:
+      - name: magalu-registry-secret
+      containers:
+      - name: my-app1
+        image: container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bash-commerce-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: my-app1
+```
 
+*enviar o arquivo para a máquina virtual*
+```bash
+scp nome_arquivo user@ip:/destino
 ```
 
 ### Links Úteis
