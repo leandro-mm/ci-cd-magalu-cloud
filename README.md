@@ -95,6 +95,14 @@ scp nome_arquivo user@ip:/destino
 ```bash
 export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
 ```
+*testar a conexão*
+```bash
+kubectl cluster-info
+```
+```bash
+kubectl config current-context
+```
+
 ### 7: Integração Docker Registry x Kubernets
 O cluster precisa de um secret do tipo *docker-registry* para conseguir autenticar e puxar a imagem.
 ```bash
