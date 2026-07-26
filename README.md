@@ -230,7 +230,18 @@ kubectl describe pod <POD-NAME>
 <img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0" />
 
 
-
+### Desalocar IP público
+o IP público muda seu status de in_use para created, ficando disponível para ser reutilizado ou deletado 
+```bash
+cd /mgccli_folder
+```
+```bash
+./mgc.exe auth login
+```
+```bash
+./mgc.exe network public-ips list
+```
+ 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
