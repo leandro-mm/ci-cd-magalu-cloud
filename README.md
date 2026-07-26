@@ -100,6 +100,9 @@ export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
 kubectl cluster-info
 ```
 ```bash
+kubectl get nodes
+```
+```bash
 kubectl config current-context
 ```
 
