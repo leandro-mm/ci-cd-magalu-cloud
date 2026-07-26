@@ -136,52 +136,15 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 #### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
-- *salve o conteúdo abaixo em NOME-DO-ARQUIVO.yaml*
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: <identificacao-app>-deployment
-  labels:
-    app: <identificacao-app>
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: <identificacao-app>
-  template:
-    metadata:
-      labels:
-        app: <identificacao-app>
-    spec:
-      imagePullSecrets:
-      - name: <nome-secret-passo7>
-      containers:
-      - name: <identificacao-app>
-        image: container-registry.br-se1.magalu.cloud/<nome-container-register>/<nome-instancia>:<versao>
-        ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: <identificacao-app>-service
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 80
-  selector:
-    app: <identificacao-app>
-```
+- Edite o conteúdo do arquivo kubeconfig.yaml contido neste repositório
+
 #### 6.8: enviar o arquivo para a máquina virtual
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
 #### 6.8: aplicar o deployment/service
-*se o comando abaixo retornar erro e **echo $VARIABLE_NAME** não mostrar nada, execute o passo 6.2.3 novamente*
 ```bash
-kubectl apply -f <NOME-ARQUIVO-PASSO8>.yaml
+kubectl apply -f kubeconfig.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
