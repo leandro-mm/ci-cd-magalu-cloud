@@ -154,7 +154,14 @@ kubectl apply -f app-k8s.yaml
 ```bash
 kubectl get pods -o wide
 ```
+
+
 <img width="1568" height="75" alt="image" src="https://github.com/user-attachments/assets/38717364-7df0-42cc-a8d1-ef8c71f08ef0" />
+
+Descrever um dos pods para ver a mensagem de erro exata
+```bash
+kubectl describe pod <POD-NAME>
+```
 
 Possíveis status de erros
 - ImagePullBackOff: Kubernetes não conseguiu puxar (pull) a imagem definida no Deployment
