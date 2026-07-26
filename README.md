@@ -6,7 +6,7 @@
 - 1 Docker file e container funcional
 
 ### 1. Instalar CLI MGC
-[Instalar MGC CLI na VM](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
+[instruções](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
 ```bash
 mgc auth login
 ```	
