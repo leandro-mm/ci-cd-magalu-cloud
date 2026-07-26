@@ -5,6 +5,9 @@
 2. armazenar o container em um registry privado na Magalu Cloud
 3. executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
 
+<img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
+
+
 #### Pré-requisitos
 - Conta ativa na Magalu Cloud
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud
