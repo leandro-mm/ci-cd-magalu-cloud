@@ -154,11 +154,11 @@ kubectl apply -f app-k8s.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
-*ver os pods em execução*
+#### 7: 
+Monitoramento do cluster kubernetes
 ```bash
 kubectl get pods -o wide
 ```
-
 
 <img width="1199" height="60" alt="image" src="https://github.com/user-attachments/assets/e86308f5-e06d-4dc4-86a4-21b2383234ed" />
 
@@ -171,7 +171,22 @@ kubectl describe svc my-app1-service
 ```
 <img width="557" height="291" alt="image" src="https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5" />
 
-### 7: Troubleshooting
+<img width="768" height="167" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
+
+<img width="755" height="177" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
+
+<img width="747" height="161" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
+
+<img width="773" height="172" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
+
+<img width="715" height="171" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
+
+
+<img width="767" height="211" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
+
+
+
+### 8: Troubleshooting
 Possíveis status de erros
 - ImagePullBackOff: Kubernetes não conseguiu puxar (pull) a imagem definida no Deployment
 - ErrImagePull: Falha imediata ao tentar puxar a imagem
@@ -186,6 +201,13 @@ kubectl describe pod <POD-NAME>
 ```  
 
 <img width="754" height="42" alt="image" src="https://github.com/user-attachments/assets/a5bd25ac-d378-4b13-9215-245c5fa78103" />
+<img width="807" height="145" alt="image" src="https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778" />
+
+<img width="827" height="140" alt="image" src="https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc" />
+<img width="800" height="113" alt="image" src="https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9" />
+
+<img width="812" height="152" alt="image" src="https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0" />
+
 
 
 ### Links Úteis
