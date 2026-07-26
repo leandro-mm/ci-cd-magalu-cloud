@@ -37,8 +37,8 @@ docker tag docker-teste1:local container-registry.br-se1.magalu.cloud/container1
 ### 5. Fazer Push da Imagem Docker para o Container Registry
 ```bash
 docker push container-registry.br-se1.magalu.cloud/<NOME_REPOSITORIO>/<NOME_IMAGEM:TAG>
-
-Exemplo
+```
+*Exemplo*
 ```bash
 docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 ```
@@ -84,11 +84,11 @@ kubectl version --client
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 | ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
-enviar o arquivo para a máquina virtual
+*enviar o arquivo para a máquina virtual*
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
-criar variável de ambiente
+*criar variável de ambiente*
 ```bash
 export KUBECONFIG=$PWD/kubeconfig.yaml
 ```
