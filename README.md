@@ -87,15 +87,15 @@ kubectl version --client
 |  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 | ou baixar o arquivo pela CLI: ```mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml```|
 
-*enviar o arquivo para a máquina virtual*
+*6.2.1 enviar o arquivo para a máquina virtual*
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
-*criar variável de ambiente*
+*6.2.3 criar variável de ambiente*
 ```bash
 export KUBECONFIG=$PWD/<NOME-DO-ARQUIVO>.yaml
 ```
-*testar a conexão*
+*6.2.4 testar a conexão*
 ```bash
 kubectl cluster-info
 ```
@@ -161,6 +161,7 @@ spec:
 ```bash
 scp nome_arquivo user@ip:/destino
 ```
+*pode ser necesário executar o comando do passo 6.2.3*
 
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
