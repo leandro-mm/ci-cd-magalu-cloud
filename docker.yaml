@@ -1,0 +1,18 @@
+# Dockerfile
+FROM alpine:latest
+
+# Instala o bash e o netcat tradicional 
+RUN apk add --no-cache bash netcat-openbsd
+
+# Cria o diretório da aplicação 
+WORKDIR /app
+
+#Copia o script para dentro do container 
+COPY shell-script1.sh .
+RUN chmod +x shell-script1.sh
+
+# Expõe a porta que o script usa 
+EXPOSE 8080
+
+# Comando para rodar o script
+CMD ["./shell-script1.sh"]
