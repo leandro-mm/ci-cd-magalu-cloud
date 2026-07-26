@@ -75,12 +75,15 @@ kubectl version --client
 ```
 
 #### 6.2: Download do kubeconfig
+| caminho do arquivo| conteúdo do arquivo|
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/484e6457-f14d-4b86-a677-19ce1fd1bbae) | ![](https://github.com/user-attachments/assets/a6b87d07-e7b0-487b-96a9-8c3ae329d7d6) |
+|  | o arquivo contém o nome do usuário, servidor e o certificado para fazer a conexão com o kuernets |
 
-<img width="1230" height="491" alt="image" src="https://github.com/user-attachments/assets/484e6457-f14d-4b86-a677-19ce1fd1bbae" />
 
 ```bash
 # enviar o arquivo para a máquina virtual
-mscp nome_arquivo user@ip:/destino
+scp nome_arquivo user@ip:/destino
 ```
 ```bash
 mgc kubernets cluster kubeconfig --cluster-id <CLUSTER_ID> --raw > kubeconfig.yaml
