@@ -171,14 +171,19 @@ kubectl get service <app-k8s-service-name> --watch
 <img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
 
 ```bash
-kubectl describe svc my-app1-service
+kubectl describe svc <nome-do-service-arquivo-k8s>
 ```
 
-<img width="557" height="291" alt="image" src="https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5" />
+| | |
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5) | ![](https://github.com/user-attachments/assets/3d08d5e7-c6e4-4262-afe2-0df543438a96) | 
 
 Service e app devem estar rodando na mesma porta
 ```bash
 kubectl patch svc <nome-do-service-no-k8s-file> -p '{"spec":{"ports":[{"port":xx,"targetPort":xx}]}}'
+```
+```bash
+kubectl run test-curl --rm -it --image=curlimages/curl --restart=Never -- curl -v http://<nome-servico-k8s-file>:80
 ```
 
 Outros comandos
@@ -187,18 +192,18 @@ Teste diretamente nos pods (ignorando o LoadBalancer)
 kubectl exec -it <IDENTIFICADOR> -- curl -v localhost:80
 ```
 
-<img width="667" height="67" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
+<img width="767" height="167" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
 
-<img width="655" height="77" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
+<img width="755" height="177" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
 
-<img width="647" height="61" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
+<img width="747" height="161" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
 
-<img width="673" height="72" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
+<img width="773" height="172" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
 
-<img width="615" height="71" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
+<img width="715" height="171" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
 
 
-<img width="667" height="111" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
+<img width="767" height="211" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
 
 
 
