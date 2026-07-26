@@ -154,8 +154,8 @@ kubectl apply -f app-k8s.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
-#### 7: 
-Monitoramento do cluster kubernetes
+#### 7: Monitoramento do cluster kubernetes
+
 ```bash
 kubectl get pods -o wide
 ```
@@ -166,23 +166,27 @@ kubectl get pods -o wide
 kubectl get service <app-k8s-service-name> --watch
 ```
 <img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
+
 ```bash
 kubectl describe svc my-app1-service
 ```
+
 <img width="557" height="291" alt="image" src="https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5" />
 
-<img width="768" height="167" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
+Outros comandos
 
-<img width="755" height="177" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
+<img width="667" height="67" alt="image" src="https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404" />
 
-<img width="747" height="161" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
+<img width="655" height="77" alt="image" src="https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39" />
 
-<img width="773" height="172" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
+<img width="647" height="61" alt="image" src="https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7" />
 
-<img width="715" height="171" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
+<img width="673" height="72" alt="image" src="https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e" />
+
+<img width="615" height="71" alt="image" src="https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356" />
 
 
-<img width="767" height="211" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
+<img width="667" height="111" alt="image" src="https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f" />
 
 
 
