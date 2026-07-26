@@ -64,7 +64,7 @@ docker push container-registry.br-se1.magalu.cloud/container1/docker-teste1:v1
 
 #### 6.1: Instalar Kubectl no Ubuntu
 ```bash
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dlk8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
 ```bash
 chmod +x kubectl
