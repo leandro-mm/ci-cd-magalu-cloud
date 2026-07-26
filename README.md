@@ -173,6 +173,8 @@ kubectl get pods -o wide
 ```
 <img width="1568" height="75" alt="image" src="https://github.com/user-attachments/assets/38717364-7df0-42cc-a8d1-ef8c71f08ef0" />
 
+Possíveis status
+- ImagePullBackOff: Kubernetes não conseguiu puxar (pull) a imagem definida no Deploymen
 ```bash
 kubectl get service <VALOR-NA-SECAO-NAME-KIND-SERVICE->-service --watch
 ```
