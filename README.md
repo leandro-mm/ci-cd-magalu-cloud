@@ -153,6 +153,10 @@ kubectl apply -f app-k8s.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
+*Processo*
+<img width="4670" height="3014" alt="image" src="https://github.com/user-attachments/assets/651ddf13-2383-4dc4-b8ac-8e625ecf3db8" />
+
+
 #### 6.9: Acessar recursos via ip externo do load balancer
 ```bash
 kubectl describe svc <nome-do-service-arquivo-k8s>
