@@ -160,7 +160,8 @@ kubectl describe svc <nome-do-service-arquivo-k8s>
 
 | | |
 | :---: | :---: |
-| ![](https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5) | ![](https://github.com/user-attachments/assets/3d08d5e7-c6e4-4262-afe2-0df543438a96) | 
+| ![](https://github.com/user-attachments/assets/a06c8faf-2394-4056-b6b3-ca584e56a1cf) | ![](https://github.com/user-attachments/assets/3d08d5e7-c6e4-4262-afe2-0df543438a96) | 
+|||
 
 ### 8: Troubleshooting
 
