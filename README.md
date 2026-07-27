@@ -5,8 +5,6 @@
 2. armazenar o container em um registry privado na Magalu Cloud
 3. executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
 
-<img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
-
 
 #### Pré-requisitos
 - Conta ativa na Magalu Cloud
@@ -14,13 +12,14 @@
 - Docker instalado e configurado na Máquina Virtual
 - Construir e executar uma imagem docker na Máquina Virtual
 
-### 1. Instalar CLI MGC
-[instruções](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
+### 1. Instalar CLI MGC na Máquina Virtual
+[Siga as seguintes instruções](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
 ```bash
 mgc auth login
 ```	
 ### 2. Criar Container Registry na Magalu Cloud
-*sem exemplo*
+*Exemplo de estrutura*
+<img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
 
 ### 3 Login no Container Registry
 ```bash
@@ -30,7 +29,7 @@ docker login https://container-registry.br-se1.magalu.cloud -u SEU_USER_ID
 
 <img width="600" height="300" alt="container-registry-magalu" src="https://github.com/user-attachments/assets/0eeb57eb-acc4-4bbc-b510-97c49956fdc8" />
 
-*baixe o arquivo de credenciais para ser utilizado no passo 7*
+- *baixe o arquivo de credenciais para ser utilizado na criação do secret para integração do Docker Registry com o  Kubernets*
 
 ### 4. Tagear imagem Docker
 Verificar imagem local
@@ -154,22 +153,7 @@ kubectl apply -f app-k8s.yaml
 ```
 <img width="390" height="39" alt="image" src="https://github.com/user-attachments/assets/6a77a913-3cad-4a3f-b6f4-0df456476ac0" />
 
-#### 7: Monitoramento do cluster kubernetes
-```bash
-kubectl get pods -l app=my-app1
-```
-
-```bash
-kubectl get pods -o wide
-```
-
-<img width="1199" height="60" alt="image" src="https://github.com/user-attachments/assets/e86308f5-e06d-4dc4-86a4-21b2383234ed" />
-
-```bash
-kubectl get service <app-k8s-service-name> --watch
-```
-<img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
-
+#### 6.9: Acessar recursos via ip externo do load balancer
 ```bash
 kubectl describe svc <nome-do-service-arquivo-k8s>
 ```
@@ -178,13 +162,14 @@ kubectl describe svc <nome-do-service-arquivo-k8s>
 | :---: | :---: |
 | ![](https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5) | ![](https://github.com/user-attachments/assets/3d08d5e7-c6e4-4262-afe2-0df543438a96) | 
 
-Service e app devem estar rodando na mesma porta
-```bash
-kubectl patch svc <nome-do-service-no-k8s-file> -p '{"spec":{"ports":[{"port":xx,"targetPort":xx}]}}'
-```
-```bash
-kubectl run test-curl --rm -it --image=curlimages/curl --restart=Never -- curl -v http://<nome-servico-k8s-file>:80
-```
+
+
+
+
+
+
+
+
 
 Outros comandos
 Teste diretamente nos pods (ignorando o LoadBalancer)
@@ -201,6 +186,17 @@ kubectl exec -it <IDENTIFICADOR> -- curl -v localhost:80
 
 
 ### 8: Troubleshooting
+#### POD Status 
+```bash
+kubectl get pods -l app=<NOME-DEFINIDO-PARA-APP>
+```
+
+```bash
+kubectl get pods -o wide
+```
+
+<img width="1199" height="60" alt="image" src="https://github.com/user-attachments/assets/e86308f5-e06d-4dc4-86a4-21b2383234ed" />
+
 Possíveis status de erros
 - ImagePullBackOff: Kubernetes não conseguiu puxar (pull) a imagem definida no Deployment
 - ErrImagePull: Falha imediata ao tentar puxar a imagem
@@ -218,7 +214,29 @@ kubectl describe pod <POD-NAME>
 |![](https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0)| ![](https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778)| 
 | ![](https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc)| ![](https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9)| 
 
-### Desalocar IP público
+#### Service e app devem estar rodando na mesma porta
+```bash
+kubectl patch svc <nome-do-service-no-k8s-file> -p '{"spec":{"ports":[{"port":xx,"targetPort":xx}]}}'
+```
+```bash
+kubectl run test-curl --rm -it --image=curlimages/curl --restart=Never -- curl -v http://<nome-servico-k8s-file>:80
+```
+### Excluir Recursos
+
+#### Excluir/Desalocar IP do Load Balancer
+```bash
+./mgc.exe load-balancer network-loadbalancers list [-o table[json]]
+```
+```bash
+/mgc.exe load-balancer network-loadbalancers delete <load-balancer-id> --delete-public-ip
+```
+#### watch
+```bash
+kubectl get service <app-k8s-service-name> --watch
+```
+<img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
+
+#### Deletar IP público
 o IP público muda seu status de in_use para created, ficando disponível para ser reutilizado ou deletado 
 ```bash
 cd /mgccli_folder
