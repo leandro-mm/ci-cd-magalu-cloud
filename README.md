@@ -162,30 +162,12 @@ kubectl describe svc <nome-do-service-arquivo-k8s>
 | :---: | :---: |
 | ![](https://github.com/user-attachments/assets/2a554cd1-194c-4f5c-a967-7254630d97d5) | ![](https://github.com/user-attachments/assets/3d08d5e7-c6e4-4262-afe2-0df543438a96) | 
 
+### 8: Troubleshooting
 
-
-
-
-
-
-
-
-
-Outros comandos
-Teste diretamente nos pods (ignorando o LoadBalancer)
+#### Teste diretamente nos pods (ignorando o LoadBalancer)
 ```bash
 kubectl exec -it <IDENTIFICADOR> -- curl -v localhost:80
 ```
-| | |
-| :---: | :---: |
-| ![](https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404) | ![](https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39) | 
-|![](https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7)  | ![](https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e) | 
-| ![](https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356) |  ![](https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f)| 
-
-
-
-
-### 8: Troubleshooting
 #### POD Status 
 ```bash
 kubectl get pods -l app=<NOME-DEFINIDO-PARA-APP>
@@ -209,10 +191,18 @@ Descrever um dos pods para ver a mensagem de erro exata
 ```bash
 kubectl describe pod <POD-NAME>
 ```
+Outros tipos de erro
 | | |
 | :---: | :---: |
 |![](https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0)| ![](https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778)| 
 | ![](https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc)| ![](https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9)| 
+
+Outros comandos
+| | |
+| :---: | :---: |
+| ![](https://github.com/user-attachments/assets/cd33e2e8-d1b8-4bcd-a7bf-b38173eb3404) | ![](https://github.com/user-attachments/assets/a5e86231-6ba9-4669-b56a-fcfa93580b39) | 
+|![](https://github.com/user-attachments/assets/d71612d0-b94f-4883-9a63-b7fc2fa839d7)  | ![](https://github.com/user-attachments/assets/dcde318f-5987-4d62-adb9-4b4eb4f2433e) | 
+| ![](https://github.com/user-attachments/assets/07589bb2-dcfb-4bb9-9075-13c33277a356) |  ![](https://github.com/user-attachments/assets/7d28057e-effa-4a91-98da-4e82f288956f)| 
 
 #### Service e app devem estar rodando na mesma porta
 ```bash
@@ -221,6 +211,13 @@ kubectl patch svc <nome-do-service-no-k8s-file> -p '{"spec":{"ports":[{"port":xx
 ```bash
 kubectl run test-curl --rm -it --image=curlimages/curl --restart=Never -- curl -v http://<nome-servico-k8s-file>:80
 ```
+#### watch
+```bash
+kubectl get service <app-k8s-service-name> --watch
+```
+<img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
+
+
 ### Excluir Recursos
 
 #### Excluir/Desalocar IP do Load Balancer
@@ -230,11 +227,7 @@ kubectl run test-curl --rm -it --image=curlimages/curl --restart=Never -- curl -
 ```bash
 /mgc.exe load-balancer network-loadbalancers delete <load-balancer-id> --delete-public-ip
 ```
-#### watch
-```bash
-kubectl get service <app-k8s-service-name> --watch
-```
-<img width="757" height="40" alt="image" src="https://github.com/user-attachments/assets/925751c4-0525-45d2-8209-11a93a2189af" />
+
 
 #### Deletar IP público
 o IP público muda seu status de in_use para created, ficando disponível para ser reutilizado ou deletado 
