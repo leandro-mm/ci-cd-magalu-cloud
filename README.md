@@ -4,6 +4,7 @@
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
 <img width="1085" height="273" alt="image" src="https://github.com/user-attachments/assets/8fea3ae5-92d6-42c7-a568-c4c0767aec08" />
+
 _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ---
@@ -334,6 +335,7 @@ jobs:
         run: npm run build
 ```
 <img width="979" height="592" alt="image" src="https://github.com/user-attachments/assets/609a6941-ce0a-4393-9363-ea50fb7a0b94" />  
+
 _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ---
