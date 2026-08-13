@@ -3,7 +3,8 @@
 ### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
-<img width="605" height="156" alt="image" src="https://github.com/user-attachments/assets/cb6b5520-6ffb-45ae-861b-78467e84175e" />
+<img width="1085" height="273" alt="image" src="https://github.com/user-attachments/assets/8fea3ae5-92d6-42c7-a568-c4c0767aec08" />
+
 
 
 ### Pré-requisitos
@@ -250,7 +251,9 @@ cd /mgccli_folder
 ./mgc.exe  network public-ips delete <public-ip-id>
 ```
 ### Parte 2 - Processo Automatizado
-<img width="493" height="177" alt="image" src="https://github.com/user-attachments/assets/4d46b2b8-c08e-4416-b84d-8b89eeca73b5" />
+<img width="1093" height="414" alt="image" src="https://github.com/user-attachments/assets/b83ad00f-44d2-47eb-ad90-c02b8eb4e553" />
+
+
 
 
 
