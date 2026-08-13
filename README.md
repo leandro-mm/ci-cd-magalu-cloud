@@ -331,6 +331,8 @@ jobs:
       - name: Build do projeto
         run: npm run build
 ```
+<img width="979" height="592" alt="image" src="https://github.com/user-attachments/assets/609a6941-ce0a-4393-9363-ea50fb7a0b94" />  
+_fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ---
 #### Links Úteis
