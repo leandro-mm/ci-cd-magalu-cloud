@@ -259,6 +259,8 @@ cd /mgccli_folder
 ```
 ---
 ### Parte 2 - Processo Automatizado
+- Objetivo: Publicar imagens Docker automaticamente, no Container Registry da Magalu Cloud, a cada git push
+
 <img width="1093" height="414" alt="image" src="https://github.com/user-attachments/assets/b83ad00f-44d2-47eb-ad90-c02b8eb4e553" />
 
 _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
