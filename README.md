@@ -4,6 +4,7 @@
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
 <img width="1085" height="273" alt="image" src="https://github.com/user-attachments/assets/8fea3ae5-92d6-42c7-a568-c4c0767aec08" />
+_fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ---
 
@@ -260,6 +261,7 @@ cd /mgccli_folder
 ### Parte 2 - Processo Automatizado
 <img width="1093" height="414" alt="image" src="https://github.com/user-attachments/assets/b83ad00f-44d2-47eb-ad90-c02b8eb4e553" />
 
+_fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 
 ---
