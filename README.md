@@ -23,6 +23,7 @@ mgc auth login
 
 <img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
 ---
+
 #### 3 Login no Container Registry
 ```bash
 docker login https://container-registry.br-se1.magalu.cloud -u SEU_USER_ID
@@ -348,11 +349,35 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ##### Benefícios dessa abordagem
 - Redução de erro humano: a mesma sequência de passos é executada sempre da mesma forma.
-- Rastreabilidade: cada imagem publicada fica associada ao commit e ao digest que a gerou.
+- Rastreabilidade: cada imagem publicada fica associada ao commit e ao digest (identificador criptográfico único (sha256) de uma imagem específica — imutável, ao contrário da tag (apelido que pode ser reatribuído) que a gerou.
 - Velocidade: uma nova versão fica disponível minutos após o push, sem intervenção manual.
 - Padronização: todo o time publica imagens seguindo o mesmo processo e as mesmas boas práticas.
+
 ---
-#### Links Úteis
+#### Pré-requisitos
+- Conta no GitHub
+- Conta na Magalu Cloud
+- Git instalado na máquina local
+- Docker instalado na máquina local
+- Editor de código (ex.: VS Code, Sublime, Vim)
+- Terminal (Bash, Zsh, PowerShell ou WSL)
+- Conexão com a internet 
+---
+
+#### Passo 1: Crie o Registry
+- Obtenha as credenciais do registry criado no passo 2.
+- Anote os cinco valores abaixo:
+  
+| Campo | Exemplo de valor | 
+|------|-----------|
+| Região | br-se1 | 
+| Endpoint (host) | sempre segue o formato `container-registry.<região>.magalu.cloud/<nome-do-registry>/<nome-da-imagem>:<tag>` |
+| Nome do registry | cr-meu-projeto |
+| Username | pode ser obtido via mgc container-registry credentials get |
+| Password | pode ser obtido via mgc container-registry credentials get |
+
+---
+### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
 [Container Registry - Magalu Cloud](https://www.magalu.cloud/container-registry)
