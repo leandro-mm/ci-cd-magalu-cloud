@@ -1,8 +1,8 @@
 ## Práticas de CI/CD Utilizando Magalu Cloud
 
 ### Parte 1
-1. Armazenar um container em registry privado na Magalu Cloud
-3. Executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
+Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
+Objetivo 2: Executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
 
 
 ### Pré-requisitos
