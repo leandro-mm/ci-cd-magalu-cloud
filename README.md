@@ -8,9 +8,7 @@
 
 #### Pré-requisitos
 - Conta ativa na Magalu Cloud
-- 1 Máquina Virtual criada no ambiente da Magalu Cloud
-- Docker instalado e configurado na Máquina Virtual
-- Construir e executar uma imagem docker na Máquina Virtual
+- 1 Máquina Virtual criada no ambiente da Magalu Cloud com acesso ssh e Docker instalado
 
 ### 1. Instalar CLI MGC na Máquina Virtual
 [Siga as seguintes instruções](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
