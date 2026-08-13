@@ -3,9 +3,6 @@
 ### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
-<img width="1085" height="273" alt="image" src="https://github.com/user-attachments/assets/8fea3ae5-92d6-42c7-a568-c4c0767aec08" />
-
-_fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 ---
 
@@ -260,7 +257,18 @@ cd /mgccli_folder
 ```
 ---
 ### Parte 2 - Processo Automatizado
-- Objetivo: Publicar imagens Docker automaticamente, no Container Registry da Magalu Cloud, a cada git push
+- Objetivo: Publicar imagens Docker automaticamente no Container Registry da Magalu Cloud
+
+#### Contexto
+Sem automação, publicar uma nova versão de uma aplicação em contêiner costuma exigir uma sequência manual
+de comandos: build da imagem, login no registry, tag correta, push e, por fim, conferência de que tudo
+funcionou. Esse processo manual é repetitivo, sujeito a esquecimentos (como taggear com a versão errada) e
+difícil de auditar.
+<img width="1085" height="273" alt="image" src="https://github.com/user-attachments/assets/8fea3ae5-92d6-42c7-a568-c4c0767aec08" />
+
+_fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
+
+Automatização do processo: escreve-se o código, executa-se git push, e o GitHub Actions cuida do restante — build, tag, autenticação e publicação no Magalu Cloud Container Registry.
 
 <img width="1093" height="414" alt="image" src="https://github.com/user-attachments/assets/b83ad00f-44d2-47eb-ad90-c02b8eb4e553" />
 
@@ -338,6 +346,11 @@ jobs:
 
 _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
+##### Benefícios dessa abordagem
+- Redução de erro humano: a mesma sequência de passos é executada sempre da mesma forma.
+- Rastreabilidade: cada imagem publicada fica associada ao commit e ao digest que a gerou.
+- Velocidade: uma nova versão fica disponível minutos após o push, sem intervenção manual.
+- Padronização: todo o time publica imagens seguindo o mesmo processo e as mesmas boas práticas.
 ---
 #### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
