@@ -2,7 +2,8 @@
 
 ### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
-- Objetivo 2: Executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
+- Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
+<img width="605" height="156" alt="image" src="https://github.com/user-attachments/assets/cb6b5520-6ffb-45ae-861b-78467e84175e" />
 
 
 ### Pré-requisitos
@@ -249,6 +250,10 @@ cd /mgccli_folder
 ./mgc.exe  network public-ips delete <public-ip-id>
 ```
 ### Parte 2 - Processo Automatizado
+<img width="493" height="177" alt="image" src="https://github.com/user-attachments/assets/4d46b2b8-c08e-4416-b84d-8b89eeca73b5" />
+
+
+
 
 #### Continuous Delivery + Continuous Deployment
 - *Continuous Delivery*: = O software está pronto para ir para produção, mas alguém aperta o botão para liberar.
