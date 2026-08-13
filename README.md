@@ -1,6 +1,6 @@
 ## Práticas de CI/CD Utilizando Magalu Cloud
 
-### Parte 1
+### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container em pods, de forma replicada, no Kubernets com exposição externa via LoadBalancer
 
@@ -248,15 +248,16 @@ cd /mgccli_folder
 ```bash
 ./mgc.exe  network public-ips delete <public-ip-id>
 ```
-### Parte 2 - Continuous Delivery + Continuous Deployment
+### Parte 2 - Processo Automatizado
+
+#### Continuous Delivery + Continuous Deployment
 - *Continuous Delivery*: = O software está pronto para ir para produção, mas alguém aperta o botão para liberar.
   <img width="745" height="84" alt="image" src="https://github.com/user-attachments/assets/60c256c8-5750-4b2a-8750-d55ec62d617f" />
   
 - *Continuous Deployment* = O software vai para produção automaticamente, sem que nenhum humano aperte o botão.
   <img width="725" height="84" alt="image" src="https://github.com/user-attachments/assets/aebfeac1-c33f-4c04-9a3b-e476eb28bb20" />
 
-- Ambas são extensões do Continuous Integration (CI). O CI é o processo onde os desenvolvedores integram o código no repositório principal várias vezes ao dia. Isso dispara testes automatizados para garantir que o novo código não quebrou nada.
-- 
+- Ambas são extensões do Continuous Integration (CI). O CI é o processo onde os desenvolvedores integram o código no repositório principal várias vezes ao dia. Isso dispara testes automatizados para garantir que o novo código não quebrou nada.- 
 
   
 #### Links Úteis
