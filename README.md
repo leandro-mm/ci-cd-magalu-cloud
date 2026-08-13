@@ -10,12 +10,13 @@
 - 1 Máquina Virtual criada no ambiente da Magalu Cloud com acesso ssh e Docker instalado
 
 #### 1. Instalar o **CLI MGC** na Máquina Virtual
-[Siga estas instruções, em seguida:](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
+[Siga estas instruções, e em seguida execute:](https://docs.magalu.cloud/docs/devops-tools/cli-mgc/how-to/download-and-install)
 ```bash
 mgc auth login
 ```	
 #### 2. Criar Container Registry na Magalu Cloud
-*Exemplo de estrutura*
+*Exemplo de estrutura*  
+
 <img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
 
 #### 3 Login no Container Registry
