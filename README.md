@@ -276,7 +276,63 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 - Ambas são extensões do Continuous Integration (CI). O CI é o processo onde os desenvolvedores integram o código no repositório principal várias vezes ao dia. Isso dispara testes automatizados para garantir que o novo código não quebrou nada.- 
 
-  ---
+---
+#### GitHub Runners em Pipelines CI/CD com GitHub Actions
+- **GitHub Runners** são servidores (máquinas) que executam os jobs definidos nos seus workflows do GitHub Actions. Eles são o "motor" que roda os comandos, scripts e ferramentas necessários para testar, buildar e implantar seu código.
+- Cada *runner* pode executar um job por vez e é destruído (ou reiniciado) após a conclusão, garantindo um ambiente limpo para cada execução.
+
+##### Tipos de Runners
+
+| Tipo | Descrição | Quando usar |
+|------|-----------|-------------|
+| **GitHub-hosted runners** | Máquinas gerenciadas pelo GitHub, com sistemas operacionais pré-configurados (Ubuntu, Windows, macOS). | Projetos open-source, equipes pequenas, ou quando você quer simplicidade e manutenção zero. |
+| **Self-hosted runners** | Máquinas próprias (on-premise ou na nuvem) que você registra no GitHub. | Projetos com requisitos específicos de hardware, segurança, ou que precisam de cache persistente e custos reduzidos em grande escala. |
+
+---
+
+##### Como funcionam no pipeline?
+
+1. **Trigger** – Um evento (push, pull_request, schedule, etc.) inicia o workflow.
+2. **Seleção do runner** – O GitHub escolhe um runner disponível com a label especificada (`runs-on: ubuntu-latest`, por exemplo).
+3. **Execução** – O runner clona o repositório, executa os steps definidos no YAML e gera logs em tempo real.
+4. **Resultado** – Ao final, o runner reporta sucesso ou falha, e o ambiente é limpo (no caso dos hosted).
+
+---
+
+##### Exemplo de workflow com runner
+
+```yaml
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest   # <- Define o runner
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes
+        run: npm test
+
+      - name: Build do projeto
+        run: npm run build
+```
+
+---
 #### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
