@@ -15,6 +15,8 @@
 mgc auth login
 ```	
 #### 2. Criar Container Registry na Magalu Cloud
+[console.magalu.cloud/container-registry/new](https://console.magalu.cloud/container-registry/new)
+
 *Exemplo de estrutura*  
 
 <img width="639" height="109" alt="image" src="https://github.com/user-attachments/assets/21d1d948-3e2b-4d88-a06b-95a1886a5854" />
