@@ -37,6 +37,19 @@ jobs:
             type=raw,value=latest
             type=sha,format=short
 
+      - name: Verificar se o secret está configurado
+        env:
+          TEST_USER: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
+          TEST_PASS: ${{ secrets.MAGALU_REGISTRY_PASSWORD }}
+        run: |
+          if [ -n "${TEST_USER}" ] && [ -n "${TEST_PASS}" ]; then
+            echo "✅ Secrets configurados com sucesso!"
+            echo "Username length: ${#TEST_USER}"
+            echo "Password length: ${#TEST_PASS}"
+          else
+            echo "❌ Algum secret está vazio"
+            exit 1
+          fi
       - name: Validar credenciais do Container Registry
         env:
           MAGALU_USERNAME: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
