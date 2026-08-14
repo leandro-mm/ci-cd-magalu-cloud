@@ -148,18 +148,21 @@ kubectl create secret docker-registry <NOME-DO-SECRET> \
 ```
 
 <img width="322" height="21" alt="image" src="https://github.com/user-attachments/assets/4adc0ac6-633b-4159-bf76-2970da0f9a96" />
----
+---  
+
 ##### 6.7: Criar o arquivo deployment/service
 - Os recursos já estão provisionados no cluster porém não estão em execução
 - Deve ser criado o manifesto e aplicá-lo no kubernets para executar os recursos
-- Edite o conteúdo do arquivo *app-k8s.yaml* contido neste repositório
----
-##### 6.8: enviar o arquivo para a máquina virtual
+- Edite o conteúdo do arquivo */parte1-processo-manual/app-k8s.yaml* contido neste repositório
+---  
+
+##### 6.7.1: enviar o arquivo `app-k8s.yaml` para a máquina virtual
 ```bash
-scp nome_arquivo user@ip:/destino
+scp app-k8s.yaml user@ip:/destino
 ```
----
-##### 6.9: aplicar o deployment/service
+---  
+
+##### 6.7.2: aplicar o deployment/service
 ```bash
 kubectl apply -f app-k8s.yaml
 ```
@@ -168,7 +171,8 @@ kubectl apply -f app-k8s.yaml
 *Processo*
 <img width="4670" height="3014" alt="image" src="https://github.com/user-attachments/assets/651ddf13-2383-4dc4-b8ac-8e625ecf3db8" />
 
----
+---  
+
 ##### 7.0: Acessar recursos via ip externo do load balancer
 ```bash
 kubectl describe svc <nome-do-service-arquivo-k8s>
