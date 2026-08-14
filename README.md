@@ -1,5 +1,12 @@
 ## Práticas de CI/CD Utilizando Magalu Cloud
 
+---
+### Links Úteis
+- [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
+- [Container Registry - Magalu Cloud](https://www.magalu.cloud/container-registry)
+- [Documentação Docker](https://docs.docker.com/)
+---
+
 ### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
@@ -371,16 +378,16 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 | Campo | Exemplo de valor | 
 |------|-----------|
 | Região | br-se1 | 
-| Endpoint do Container Registry | é um endereço fixo por região, ele já existe para cada região disponível segue o formato `container-registry.<região>.magalu.cloud` (`container-registry.br-se1.magalu.cloud` ou `container-registry.br-ne1.magalu.cloud`)|
+| Endpoint do Container Registry | é um endereço fixo por região. O endereço já existe para cada região disponível. Segue o formato `container-registry.<região>.magalu.cloud` (`container-registry.br-se1.magalu.cloud` ou `container-registry.br-ne1.magalu.cloud`)|
 | Nome do registry | cr-meu-projeto |
 | Username | pode ser obtido via mgc container-registry credentials get |
 | Password | pode ser obtido via mgc container-registry credentials get |
 
 Obs.: O endereço da imagem dentro do container registry será `container-registry.<região>.magalu.cloud/<nome-do-registry>/<nome-da-imagem>:<tag>` O nome do registry faz parte do caminho
----
-### Links Úteis
-[Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
 
-[Container Registry - Magalu Cloud](https://www.magalu.cloud/container-registry)
-
-[Documentação Docker](https://docs.docker.com/)
+#### Passo 2: Crie o Repositório, público ou privado, no gitHub
+#### Passo 3: Clone o repositório
+#### Passo 4: Valide a configuração do remoto
+```bash
+git remote -v
+```
