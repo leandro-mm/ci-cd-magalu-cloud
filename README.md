@@ -411,7 +411,7 @@ docker version
 | Comando | Para que serve | 
 |------|-----------|
 | docker build | Constrói uma imagem a partir de um Dockerfile. `docker build -t meu-pipeline:1.0.0 .` O parâmetro -t define o nome e a tag da imagem (formato nome:versão). O ponto final indica que o Dockerfile está no diretório atual.| 
-| docker run  | Executa um contêiner a partir de uma imagem. `docker run -d -p 5000:5000 --name app-teste meu-pipeline:1.0.0` O parâmetro -d executa em segundo plano (detached) e -p 5000:5000 mapeia a porta 5000 do contêiner para a porta 5000 da máquina local.| 
+| docker run  | Executa um contêiner a partir de uma imagem. `docker run -p 5000:5000 --name app-teste1 meu-pipeline:1.0.0` O parâmetro -p 5000:5000 mapeia a porta 5000 do contêiner para a porta 5000 da máquina local.| 
 
 ##### Conferindo imagens e contêineres
 ```bash
