@@ -389,9 +389,34 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 
 Obs.: O endereço da imagem dentro do container registry será `container-registry.<região>.magalu.cloud/<nome-do-registry>/<nome-da-imagem>:<tag>` O nome do registry faz parte do caminho
 
-#### Passo 2: Crie o Repositório, público ou privado, no gitHub
-#### Passo 3: Clone o repositório
-#### Passo 4: Valide a configuração do remoto
+---  
+
+#### Passo 2: Criar uma pequena aplicação Flask com dois endpoints
+1. Crie um Repositório, público ou privado, no gitHub
+2. Clone o repositório
+3. Valide a configuração do remoto
 ```bash
 git remote -v
 ```
+4. Utilize os arquivos da pasta ./parte-2-processo-automatico
+
+---
+
+#### Passo 3: Construir, validar e executar a imagem Docker localmente  
+
+| Comando | Para que serve | 
+|------|-----------|
+| docker build | Constrói uma imagem a partir de um Dockerfile. `docker build -t meu-pipeline:1.0.0 .` O parâmetro -t define o nome e a tag da imagem (formato nome:versão). O ponto final indica que o Dockerfile está no diretório atual.| 
+| docker run  | Executa um contêiner a partir de uma imagem. `docker run -d -p 5000:5000 --name app-teste meu-pipeline:1.0.0` O parâmetro -d executa em segundo plano (detached) e -p 5000:5000 mapeia a porta 5000 do contêiner para a porta 5000 da máquina local.| 
+
+##### Conferindo imagens e contêineres
+```bash
+docker images
+```
+```bash
+docker ps
+```
+
+##### Acesse os dois endpoints da aplicação
+> http://localhost:5000
+> > http://localhost:5000/health
