@@ -454,6 +454,15 @@ feature/publish/.github/workflows/publish.yml
 
 ---
 
+##### Teste
+1. Realizar o primeiro Push
+2. Acompanhar a execução do workflow na aba Actions do GitHub
+3. Confirmar, diretamente no Container Registry da Magalu Cloud, que a imagem foi publicada pelo workflow
+   
+<img width="842" height="370" alt="image" src="https://github.com/user-attachments/assets/61e05b47-a647-4049-adeb-74daace8aea6" />
+
+---
+
 ##### Ajuste de versão da imagem
 <img width="378" height="158" alt="image" src="https://github.com/user-attachments/assets/b7f976ac-d8d9-457d-bea3-2c685527ec70" />
 
@@ -464,7 +473,7 @@ feature/publish/.github/workflows/publish.yml
 1. O arquivo dockerfile está dentro de outra pasta, deveria estar na raíz do projeto, dessa forma se atentar à linha 64 do publish.yml, linhas 5 e 9 do dockerfile
 2. Rode as duas imagens localmente (versões 1.0.0 e 2.0.0, se você as manteve) e compare a resposta do endpoint /. Essa comparação, lado a lado, é a demonstração final de que cada push realmente produz uma versão nova, rastreável e independente da anterior.
    
-<img width="842" height="370" alt="image" src="https://github.com/user-attachments/assets/61e05b47-a647-4049-adeb-74daace8aea6" />
+
 
 
 ---
