@@ -354,7 +354,7 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 - Padronização: todo o time publica imagens seguindo o mesmo processo e as mesmas boas práticas.
 
 ---
-#### Pré-requisitos
+#### Mão na massa: Pré-requisitos
 - Conta no GitHub
 - Conta na Magalu Cloud
 - Git instalado na máquina local
@@ -371,11 +371,12 @@ _fonte: Move Tech Magalu Cloud | Prosper Digital Skills_
 | Campo | Exemplo de valor | 
 |------|-----------|
 | Região | br-se1 | 
-| Endpoint (host) | sempre segue o formato `container-registry.<região>.magalu.cloud/<nome-do-registry>/<nome-da-imagem>:<tag>` |
+| Endpoint do Container Registry | é um endereço fixo por região, ele já existe para cada região disponível segue o formato `container-registry.<região>.magalu.cloud` (`container-registry.br-se1.magalu.cloud` ou `container-registry.br-ne1.magalu.cloud`)|
 | Nome do registry | cr-meu-projeto |
 | Username | pode ser obtido via mgc container-registry credentials get |
 | Password | pode ser obtido via mgc container-registry credentials get |
 
+Obs.: O endereço da imagem dentro do container registry será `container-registry.<região>.magalu.cloud/<nome-do-registry>/<nome-da-imagem>:<tag>` O nome do registry faz parte do caminho
 ---
 ### Links Úteis
 [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
