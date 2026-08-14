@@ -1,12 +1,5 @@
 ## Práticas de CI/CD Utilizando Magalu Cloud
 
----
-### Links Úteis
-- [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
-- [Container Registry - Magalu Cloud](https://www.magalu.cloud/container-registry)
-- [Documentação Docker](https://docs.docker.com/)
----
-
 ### Parte 1: Processo Manual
 - Objetivo 1: Armazenar um container em registry privado na Magalu Cloud  
 - Objetivo 2: Executar o container no Kubernets, em pods de forma replicada, com exposição externa via LoadBalancer
@@ -456,3 +449,23 @@ code .github/workflows/publish.yml
 # Copie o conteúdo do arquivo contido na branch
 feature/publish/.github/workflows/publish.yml
 ```
+##### Ajuste os valores no bloco env
+<img width="412" height="99" alt="image" src="https://github.com/user-attachments/assets/ee0bfe30-6d2c-4e1c-928d-432e86b8f6da" />
+
+---
+
+##### Ajuste de versão da imagem
+<img width="378" height="158" alt="image" src="https://github.com/user-attachments/assets/b7f976ac-d8d9-457d-bea3-2c685527ec70" />
+
+
+---
+
+##### Troubleshooting
+1. O arquivo dockerfile está dentro de outra pasta, deveria estar na raíz do projeto, dessa forma se atentar à linha 64 do publish.yml, linhas 5 e 9 do dockerfile
+2. Rode as duas imagens localmente (versões 1.0.0 e 2.0.0, se você as manteve) e compare a resposta do endpoint /. Essa comparação, lado a lado, é a demonstração final de que cada push realmente produz uma versão nova, rastreável e independente da anterior.
+
+---
+### Links Úteis
+- [Documentação oficial Magalu Cloud](https://docs.magalu.cloud/)
+- [Container Registry - Magalu Cloud](https://www.magalu.cloud/container-registry)
+- [Documentação Docker](https://docs.docker.com/)
