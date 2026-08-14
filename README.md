@@ -403,6 +403,10 @@ git remote -v
 ---
 
 #### Passo 3: Construir, validar e executar a imagem Docker localmente  
+##### 3.1: Start Docker Desktop  
+```bash
+docker version
+```
 
 | Comando | Para que serve | 
 |------|-----------|
