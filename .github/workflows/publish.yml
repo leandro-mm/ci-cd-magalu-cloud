@@ -1,57 +1,68 @@
 name: Publicar imagem no Magalu Cloud
+
 on:
- push:
- branches: [ "main" ]
+    push:
+        branches: ["main"]
+
 env:
- REGISTRY: container-registry.br-se1.magalu.cloud
- REGISTRY_NAME: cr-meu-projeto
- IMAGE_NAME: pipeline-demo
+    REGISTRY: container-registry.br-se1.magalu.cloud
+    REGISTRY_NAME: container1
+    IMAGE_NAME: pipeline-demo
+
 permissions:
- contents: read
+    contents: read
+
 jobs:
- build-and-push:
- runs-on: ubuntu-latest
- steps:
- - name: Checkout do código
- uses: actions/checkout@v4
- - name: Definir endereço da imagem
- id: image
- run: |
- IMG="${{ env.REGISTRY }}/${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}"
- echo "image_repository=$IMG" >> "$GITHUB_OUTPUT"
- - name: Configurar Docker Buildx
- uses: docker/setup-buildx-action@v3
- - name: Gerar metadados da imagem
- id: meta
- uses: docker/metadata-action@v5
- with:
- images: ${{ steps.image.outputs.image_repository }}
- tags: |
- type=raw,value=latest
- type=sha,format=short
- - name: Validar credenciais do Container Registry
- run: |
- U="${{ secrets.MAGALU_REGISTRY_USERNAME }}"
- P="${{ secrets.MAGALU_REGISTRY_PASSWORD }}"
- [ -z "$U" ] && { echo "::error::USERNAME ausente"; exit 1; }
- [ -z "$P" ] && { echo "::error::PASSWORD ausente"; exit 1; }
- - name: Login no Magalu Cloud Container Registry
- uses: docker/login-action@v3
- with:
- registry: ${{ env.REGISTRY }}
- username: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
- password: ${{ secrets.MAGALU_REGISTRY_PASSWORD }}
- - name: Build e push da imagem
- id: push
- uses: docker/build-push-action@v6
- with:
- context: .
- push: true
- tags: ${{ steps.meta.outputs.tags }}
- labels: ${{ steps.meta.outputs.labels }}
- - name: Resumo da execução
- run: |
- IMG="${{ steps.image.outputs.image_repository }}"
- echo "### Imagem publicada :rocket:" >> $GITHUB_STEP_SUMMARY
- echo "- Imagem: $IMG" >> $GITHUB_STEP_SUMMARY
- echo "- Digest: ${{ steps.push.outputs.digest }}" >> $GITHUB_STEP_SUMMARY
+    build-and-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout do código
+              uses: actions/checkout@v4
+
+            - name: Definir endereço da imagem
+              id: image
+              run: |
+                  IMG="${REGISTRY}/${REGISTRY_NAME}/${IMAGE_NAME}"
+                  echo "image_repository=${IMG}" >> "${GITHUB_OUTPUT}"
+
+            - name: Configurar Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Gerar metadados da imagem
+              id: meta
+              uses: docker/metadata-action@v5
+              with:
+                  images: ${{ steps.image.outputs.image_repository }}
+                  tags: |
+                      type=raw,value=latest
+                      type=sha,format=short
+
+            - name: Validar credenciais do Container Registry
+              run: |
+                  U="${MAGALU_REGISTRY_USERNAME}"
+                  P="${MAGALU_REGISTRY_PASSWORD}"
+                  [ -z "$U" ] && { echo "::error::USERNAME ausente"; exit 1; }
+                  [ -z "$P" ] && { echo "::error::PASSWORD ausente"; exit 1; }
+
+            - name: Login no Magalu Cloud Container Registry
+              uses: docker/login-action@v3
+              with:
+                  registry: ${{ env.REGISTRY }}
+                  username: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
+                  password: ${{ secrets.MAGALU_REGISTRY_PASSWORD }}
+
+            - name: Build e push da imagem
+              id: push
+              uses: docker/build-push-action@v6
+              with:
+                  context: .
+                  push: true
+                  tags: ${{ steps.meta.outputs.tags }}
+                  labels: ${{ steps.meta.outputs.labels }}
+
+            - name: Resumo da execução
+              run: |
+                  IMG="${{ steps.image.outputs.image_repository }}"
+                  echo "### Imagem publicada :rocket:" >> $GITHUB_STEP_SUMMARY
+                  echo "- Imagem: $IMG" >> $GITHUB_STEP_SUMMARY
+                  echo "- Digest: ${{ steps.push.outputs.digest }}" >> $GITHUB_STEP_SUMMARY
