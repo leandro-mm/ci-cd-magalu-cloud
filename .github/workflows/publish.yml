@@ -8,6 +8,8 @@ env:
     REGISTRY: container-registry.br-se1.magalu.cloud
     REGISTRY_NAME: container1
     IMAGE_NAME: pipeline-demo
+    MAGALU_REGISTRY_USERNAME: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
+    MAGALU_REGISTRY_PASSWORD: ${{ secrets.MAGALU_REGISTRY_PASSWORD }}
 
 permissions:
     contents: read
@@ -48,8 +50,8 @@ jobs:
               uses: docker/login-action@v3
               with:
                   registry: ${{ env.REGISTRY }}
-                  username: ${{ secrets.MAGALU_REGISTRY_USERNAME }}
-                  password: ${{ secrets.MAGALU_REGISTRY_PASSWORD }}
+                  username: ${{ env.MAGALU_REGISTRY_USERNAME }}
+                  password: ${{ env.MAGALU_REGISTRY_PASSWORD }}
 
             - name: Build e push da imagem
               id: push
