@@ -424,3 +424,14 @@ docker ps
 ##### Acesse os dois endpoints da aplicação
 > http://localhost:5000
 > > http://localhost:5000/health
+
+#### Passo 4: Configurando GitHub Secrets
+**Objetivo**: Armazenar as credenciais do Container Registry de forma segura no GitHub, para que o workflow possa usá-las sem expor a senha no código.
+
+- Um Secret do GitHub é um valor criptografado, associado ao repositório, que fica acessível aos workflows do GitHub Actions em tempo de execução, mas nunca é exibido em logs nem pode ser lido de volta pela interface.
+- No repositório do GitHub, acesse `Settings → Secrets and variables → Actions → New repository secret` e crie os dois secrets abaixo:
+
+| Nome do Secret | Valor | 
+|------|-----------|
+|  MAGALU_REGISTRY_USERNAME | Username retornado por mgc container-registry credentials get| 
+|   MAGALU_REGISTRY_PASSWORD | Password retornado por mgc container-registry credentials get| 
