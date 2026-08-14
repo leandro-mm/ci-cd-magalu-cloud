@@ -453,5 +453,6 @@ mkdir -p .github/workflows
 # Abra no VS Code e edite
 code .github/workflows/publish.yml
 
-# Copie o conteúdo do arquivo na branch
+# Copie o conteúdo do arquivo contido na branch
+feature/publish/.github/workflows/publish.yml
 ```
