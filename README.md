@@ -472,6 +472,14 @@ feature/publish/.github/workflows/publish.yml
 ##### Troubleshooting
 1. O arquivo dockerfile está dentro de outra pasta, deveria estar na raíz do projeto, dessa forma se atentar à linha 64 do publish.yml, linhas 5 e 9 do dockerfile
 2. Rode as duas imagens localmente (versões 1.0.0 e 2.0.0, se você as manteve) e compare a resposta do endpoint /. Essa comparação, lado a lado, é a demonstração final de que cada push realmente produz uma versão nova, rastreável e independente da anterior.
+3. Testar se conexão com container registry está funcionando
+```powershell
+$env:MAGALU_USERNAME=" "
+$env:MAGALU_PASSWORD=" "
+echo $env:MAGALU_PASSWORD | docker login container-registry.br-se1.magalu.cloud -u $env:MAGALU_USERNAME --password-stdin
+
+Login Succeeded
+```
    
 
 
