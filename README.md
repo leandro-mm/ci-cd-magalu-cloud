@@ -412,6 +412,7 @@ docker version
 |------|-----------|
 | docker build | Constrói uma imagem a partir de um Dockerfile. `docker build -t meu-pipeline:1.0.0 .` O parâmetro -t define o nome e a tag da imagem (formato nome:versão). O ponto final indica que o Dockerfile está no diretório atual.| 
 | docker run  | Executa um contêiner a partir de uma imagem. `docker run -p 5000:5000 --name app-teste1 meu-pipeline:1.0.0` O parâmetro -p 5000:5000 mapeia a porta 5000 do contêiner para a porta 5000 da máquina local.| 
+---  
 
 ##### Conferindo imagens e contêineres
 ```bash
@@ -420,10 +421,12 @@ docker images
 ```bash
 docker ps
 ```
+---  
 
 ##### Acesse os dois endpoints da aplicação
 > http://localhost:5000
 > > http://localhost:5000/health
+---  
 
 #### Passo 4: Configurando GitHub Secrets
 **Objetivo**: Armazenar as credenciais do Container Registry de forma segura no GitHub, para que o workflow possa usá-las sem expor a senha no código.
@@ -434,4 +437,21 @@ docker ps
 | Nome do Secret | Valor | 
 |------|-----------|
 |  MAGALU_REGISTRY_USERNAME | Username retornado por mgc container-registry credentials get| 
-|   MAGALU_REGISTRY_PASSWORD | Password retornado por mgc container-registry credentials get| 
+|   MAGALU_REGISTRY_PASSWORD | Password retornado por mgc container-registry credentials get|  
+
+---
+#### Passo 5: Criando o Workflow
+> Criar o arquivo de workflow do GitHub Actions que constrói e publica a imagem Docker no Magalu Cloud Container Registry a cada push na branch main
+
+##### Criar localmente (com VS Code)
+```bash
+# No seu projeto local
+mkdir -p .github/workflows
+
+#Crie o arquivo publish.yml dentro de .github/workflows
+
+# Abra no VS Code e edite
+code .github/workflows/publish.yml
+
+# Copie o conteúdo do arquivo na branch
+```
