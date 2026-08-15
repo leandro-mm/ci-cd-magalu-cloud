@@ -212,6 +212,17 @@ Outros tipos de erro
 | :---: | :---: |
 |![](https://github.com/user-attachments/assets/25fad822-190a-4253-a103-4ff8333394c0)| ![](https://github.com/user-attachments/assets/8260ba31-91ee-4a69-8a0c-d0b09c72c778)| 
 | ![](https://github.com/user-attachments/assets/e0720a0e-c767-460e-a82d-bcbef2d285fc)| ![](https://github.com/user-attachments/assets/c9b2710a-31ce-44b2-8830-335fae7a12a9)| 
+| <img width="1092" height="79" alt="image" src="https://github.com/user-attachments/assets/c9c8efb5-6c73-4739-9243-3d5f9f9146fe" />| O certificado do K3s foi gerado para os IPs internos da VM (10.43.0.1, 127.0.0.1, 172.18.0.174, etc.), mas não inclui o IP público 201.23.68.4. Por isso o kubectl reclama que o certificado não é válido para esse IP.| 
+
+
+```bash
+# Teste ignorando a verificação do certificado
+kubectl get nodes --insecure-skip-tls-verify
+
+# Ou configure no kubeconfig
+kubectl config set-cluster default --insecure-skip-tls-verify=true
+kubectl get nodes
+```
 ---
 Outros comandos
 | | |
